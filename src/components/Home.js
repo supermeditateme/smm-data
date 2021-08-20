@@ -76,7 +76,7 @@ export default function Home() {
             <div className={classes.heroButtons}>
               <Grid container spacing={2} justifyContent="center">
                 <Grid item>
-                  <Button variant="contained" color="primary" href="/timeline.html">
+                  <Button variant="contained" color="primary" href="https://bucketeer-b2ec4285-3f6c-49c8-9753-fe99a1df2ac6.s3.amazonaws.com/public/timeline.html">
                     View Timeline
                   </Button>
                 </Grid>
