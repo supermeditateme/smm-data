@@ -4,7 +4,7 @@ import Link from '@material-ui/core/Link';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
-import '../../eeg-viewer/dist/css/eeg_viewer.min.css';
+import '../eeg-viewer/dist/css/eeg_viewer.min.css';
 const queryString = require('query-string');
 
 class EEG extends React.Component {
