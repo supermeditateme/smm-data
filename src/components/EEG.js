@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Studio from 'eeg-viewer';
+import Studio from '../eeg-viewer';
 import Link from '@material-ui/core/Link';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
