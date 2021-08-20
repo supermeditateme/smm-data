@@ -1,0 +1,48 @@
+.eegStudio{font-size:12px;line-height:13px}
+.ruler{height:20px}
+.viewport{height:800px}
+.channelsList{top:20px}
+.ctrlClickCatcher{top:20px}
+.annotation.defaultAnnotation{background-color:green;opacity:.3}
+.annotationsMinimap{height:100px}
+.annotationMini.defaultAnnotation{background-color:green;opacity:.3}
+.selectedAnnotation{border-color:cyan}
+.leftBorder,
+.rightBorder{background-color:cyan}
+.annotationLabel{color:cyan}
+.eegStudio{position:relative;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
+.scroller.scroller__native{overflow-x:auto}
+.scroller_container,.scroller.scroller__transform{overflow-x:hidden}
+.ruler{display:flex;position:relative}
+.segment{display:flex;justify-content:space-between;position:absolute}
+.second{width:100%;display:flex;flex-direction:column;border-left:1px solid #000;box-sizing:border-box}
+.second_line_group{display:flex;justify-content:space-between}
+.second_line{width:1px;height:7px;background-color:#000}
+.second_line:first-child,.second_line:last-child{width:0}
+.viewport{position:relative}.plot{position:relative}
+.plotSegment{position:absolute;pointer-events:none}
+.plotCanvas{display:block}
+.channelsList{position:absolute;display:flex;flex-direction:column;justify-content:space-around;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
+.annotations{position:absolute;height:100%}
+.annotation{position:absolute;height:100%;min-width:1px}
+.selectedAnnotation{position:absolute;height:100%;border-top-width:2px;border-bottom-width:2px;border-top-style:solid;border-bottom-style:solid;outline:none;box-sizing:border-box}
+.leftBorder,.rightBorder{position:absolute;height:100%;width:2px}
+.leftBorder{left:0;cursor:w-resize}
+.leftBorder:after,.rightBorder:after{position:relative;z-index:1;top:calc(50% + 9px - 5px);left:-5px;display:block;content:" ";width:10px;height:10px;border:1px solid black;background-color:white}
+.leftBorder:before{position:absolute;top:-9px;left:0;display:block;content:" ";width:0;height:0;border-style:solid;border-width:7px 0 0 7px;border-color:transparent transparent transparent #ff5754}
+.cursorW,.cursorW .rightBorder{cursor:w-resize}
+.rightBorder{right:0;cursor:e-resize}
+.rightBorder:before{position:absolute;top:-9px;right:0;display:block;content:" ";width:0;height:0;border-style:solid;border-width:0 0 7px 7px;border-color:transparent transparent #ff5754}
+.cursorE,.cursorE .leftBorder{cursor:e-resize}
+.annotationDuration{position:relative;top:50%;display:flex;flex-wrap:wrap;justify-content:center}
+.measureLine{position:relative;width:100%;top:9px;border-bottom:1px solid #ff5754}
+.leftGapper{flex-basis:1px;flex-shrink:0;height:18px}
+.durationLabel{position:relative;background-color:white;margin-left:7px;margin-right:7px}
+.annotationLabel{position:absolute;bottom:0;right:0;-webkit-transform-origin:bottom right;transform-origin:bottom right;-webkit-transform:rotate(-90deg) translateX(100%);transform:rotate(-90deg) translateX(100%);background-color:white}
+.annotationsMinimap{position:relative}.annotationMini{position:absolute;height:100%;min-width:1px;pointer-events:none}
+.cursorMinimap{position:absolute;height:100%;width:1px;background-color:red}
+.ctrlClickCatcher{position:absolute;width:100%;cursor:copy}
+.newSelection{position:absolute;height:100%;pointer-events:none;background-color:rgba(0,0,0,.1)}
+.cursor{position:absolute;top:0;width:1px;height:100%;background-color:#000;pointer-events:none}
+.cursorTime{white-space:nowrap;background-color:#fff}
+/*# sourceMappingURL=eeg_viewer.min.css.map */

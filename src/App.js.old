@@ -1,0 +1,42 @@
+import logo from './logo.svg';
+import './App.css';
+import Home from './components/Home'
+import Album from './Album'
+import Behavioral from './components/Behavioral'
+import Serum from './components/Serum'
+import EEG from './components/EEG'
+import MRI from './components/MRI'
+import Genomic from './components/Genomic'
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+
+function App() {
+  return (
+    <Router>
+    <main>
+      <nav>
+        <ul>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/album">Album</Link></li>
+          <li><Link to="/behavioral">Behavioral</Link></li>
+          <li><Link to="/serum">Serum</Link></li>
+          <li><Link to="/eeg">EEG</Link></li>
+          <li><Link to="/mri">MRI</Link></li>
+          <li><Link to="/dna">Genomic</Link></li>
+        </ul>
+      </nav>
+      <Switch>
+      <Route path="/" exact component={Home} />
+      <Route path="/album" component={Album} />
+      <Route path="/behavioral" component={Behavioral} />
+      <Route path="/serum" component={Serum} />
+      <Route path="/eeg" component={EEG} />
+      <Route path="/mri" component={MRI} />
+      <Route path="/dna" component={Genomic} />
+      <Route render={() => <h1>404: page not found</h1>} />
+      </Switch>
+    </main>
+</Router>
+  );
+}
+
+export default App;
