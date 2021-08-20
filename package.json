@@ -21,7 +21,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "heroku-prebuild": "cd eeg-viewer && yarn link && cd .. && yarn link eeg-viewer"
+    "heroku-prebuild": "cd src/eeg-viewer && yarn link && cd ../.. && yarn link eeg-viewer"
   },
   "eslintConfig": {
     "extends": [
