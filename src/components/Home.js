@@ -119,7 +119,7 @@ export default function Home() {
                     </Typography>
                   </CardContent>
                   <CardActions>
-                    <Button size="small" color="secondary" href="https://bucketeer-b2ec4285-3f6c-49c8-9753-fe99a1df2ac6.s3.amazonaws.com/public/Android-Pixel_3-544529144-UPDATED.nomie.json" target="_new" download startIcon={<GetAppIcon />}>
+                    <Button size="small" color="secondary" href="https://bucketeer-b2ec4285-3f6c-49c8-9753-fe99a1df2ac6.s3.amazonaws.com/public/raw/Android-Pixel_3-544529144-UPDATED.nomie.json" target="_new" download startIcon={<GetAppIcon />}>
                     Raw Data
                     </Button>
                   </CardActions>

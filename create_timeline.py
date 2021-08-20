@@ -215,7 +215,7 @@ for event in events:
         annotations.append(dict(
             y=200,   # position in y units
             x=date_range[day_index],
-            text="""<a href="https://www.google.com" target="_new">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>""",
+            text="""<a href="https://smm-data.herokuapp.com/serum" target="_new">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>""",
             xanchor="center",
             yanchor="middle",
             showarrow=False
@@ -238,7 +238,7 @@ for event in events:
         annotations.append(dict(
             y=215,   # position in y units
             x=date_range[day_index],
-            text="""<a href="https://www.google.com" target="_new">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>""",
+            text="""<a href="https://smm-data.herokuapp.com/eeglist" target="_new">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>""",
             xanchor="center",
             yanchor="middle",
             showarrow=False
@@ -258,14 +258,14 @@ for event in events:
             opacity=1
         ))
         # Adds a URL
-        annotations.append(dict(
-            y=205,   # position in y units
-            x=date_range[day_index],
-            text="""<a href="https://www.google.com" target="_new">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>""",
-            xanchor="center",
-            yanchor="middle",
-            showarrow=False
-            ))
+        # annotations.append(dict(
+        #     y=205,   # position in y units
+        #     x=date_range[day_index],
+        #     text="""<a href="https://smm-data.herokuapp.com" target="_new">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>""",
+        #     xanchor="center",
+        #     yanchor="middle",
+        #     showarrow=False
+        #     ))
     elif "Running" in tracker.label:
         images.append(dict(
             source="https://i.imgur.com/HiipMqQ.png",
@@ -369,7 +369,7 @@ images.append(dict(
 annotations.append(dict(
     y=200,   # position in y units
     x=date(2016, 8, 1),
-    text="""<a href="https://www.google.commmmmm" target="_new">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>""",
+    text="""<a href="https://smm-data.herokuapp.com/serum" target="_new">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>""",
     xanchor="center",
     yanchor="middle",
     showarrow=False
