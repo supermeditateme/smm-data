@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import Box from '@material-ui/core/Box';
+import Typography from '@material-ui/core/Typography';
+import Link from '@material-ui/core/Link';
 import "@fontsource/roboto";
 import {
   createViewState,
@@ -6,33 +9,33 @@ import {
 } from '@jbrowse/react-linear-genome-view'
 
 const assembly = {
-  name: 'GRCh38',
+  name: 'GRCh37',
   sequence: {
     type: 'ReferenceSequenceTrack',
-    trackId: 'GRCh38-ReferenceSequenceTrack',
+    trackId: 'refseq_track',
     adapter: {
       type: 'BgzipFastaAdapter',
       fastaLocation: {
         uri:
-          'https://s3.amazonaws.com/jbrowse.org/genomes/GRCh38/fasta/GRCh38.fa.gz',
+          'https://jbrowse.org/genomes/hg19/fasta/hg19.fa.gz',
       },
       faiLocation: {
         uri:
-          'https://s3.amazonaws.com/jbrowse.org/genomes/GRCh38/fasta/GRCh38.fa.gz.fai',
+          'https://jbrowse.org/genomes/hg19/fasta/hg19.fa.gz.fai',
       },
       gziLocation: {
         uri:
-          'https://s3.amazonaws.com/jbrowse.org/genomes/GRCh38/fasta/GRCh38.fa.gz.gzi',
+          'https://jbrowse.org/genomes/hg19/fasta/hg19.fa.gz.gzi',
       },
     },
   },
-  aliases: ['hg38'],
+  aliases: ['hg19'],
   refNameAliases: {
     adapter: {
       type: 'RefNameAliasAdapter',
       location: {
         uri:
-          'https://s3.amazonaws.com/jbrowse.org/genomes/GRCh38/hg38_aliases.txt',
+          'https://s3.amazonaws.com/jbrowse.org/genomes/hg19/hg19_aliases.txt',
       },
     },
   },
@@ -40,25 +43,16 @@ const assembly = {
 
 const tracks = [
   {
-    type: 'FeatureTrack',
-    trackId: 'ncbi_refseq_109_hg38',
-    name: 'NCBI RefSeq (GFF3Tabix)',
-    assemblyNames: ['GRCh38'],
-    category: ['Annotation'],
-    adapter: {
-      type: 'Gff3TabixAdapter',
-      gffGzLocation: {
-        uri:
-          'https://s3.amazonaws.com/jbrowse.org/genomes/GRCh38/ncbi_refseq/GCA_000001405.15_GRCh38_full_analysis_set.refseq_annotation.sorted.gff.gz',
-      },
-      index: {
-        location: {
-          uri:
-            'https://s3.amazonaws.com/jbrowse.org/genomes/GRCh38/ncbi_refseq/GCA_000001405.15_GRCh38_full_analysis_set.refseq_annotation.sorted.gff.gz.tbi',
-        },
-      },
-    },
-  },
+    "type": "VariantTrack",
+    "trackId": "my_variants",
+    "name": "My Variants",
+    "assemblyNames": ["hg19"],
+    "adapter": {
+      "type": "VcfTabixAdapter",
+      "vcfGzLocation": { "uri": "https://bucketeer-b2ec4285-3f6c-49c8-9753-fe99a1df2ac6.s3.amazonaws.com/public/raw/dna/sample_converted.vcf.gz" },
+      "index": { "location": { "uri": "https://bucketeer-b2ec4285-3f6c-49c8-9753-fe99a1df2ac6.s3.amazonaws.com/public/raw/dna/sample_converted.vcf.gz.tbi" } }
+    }
+  }
 ]
 
 const defaultSession = {
@@ -69,22 +63,22 @@ const defaultSession = {
     tracks: [
       {
         type: 'ReferenceSequenceTrack',
-        configuration: 'GRCh38-ReferenceSequenceTrack',
+        configuration: 'refseq_track',
         displays: [
           {
             type: 'LinearReferenceSequenceDisplay',
-            configuration:
-              'GRCh38-ReferenceSequenceTrack-LinearReferenceSequenceDisplay',
+            configuration: 'refseq_track-LinearReferenceSequenceDisplay',
           },
         ],
       },
       {
-        type: 'FeatureTrack',
-        configuration: 'ncbi_refseq_109_hg38',
+        type: 'VariantTrack',
+        configuration: 'my_variants',
         displays: [
           {
-            type: 'LinearBasicDisplay',
-            configuration: 'ncbi_refseq_109_hg38-LinearBasicDisplay',
+            type: 'LinearVariantDisplay',
+            configuration: 'my_variants-LinearVariantDisplay',
+            height: 480
           },
         ],
       },
@@ -98,9 +92,14 @@ class Genomic extends React.Component {
     assembly,
     tracks,
     location: '10:29,838,737..29,838,819',
-    defaultSession,
+    defaultSession
   });
-    return <JBrowseLinearGenomeView viewState={state} />;
+    return <Box p={2}>
+          <Typography align="left" color="textPrimary"  paragraph >
+                <Link href="/" color="secondary">&lt;&lt;  Back</Link>
+          </Typography>
+          <JBrowseLinearGenomeView viewState={state} />
+          </Box>;
   }
 }
 
