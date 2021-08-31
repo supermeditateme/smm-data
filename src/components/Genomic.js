@@ -29,30 +29,76 @@ const assembly = {
       },
     },
   },
-  aliases: ['hg19'],
-  refNameAliases: {
-    adapter: {
-      type: 'RefNameAliasAdapter',
-      location: {
-        uri:
-          'https://s3.amazonaws.com/jbrowse.org/genomes/hg19/hg19_aliases.txt',
-      },
-    },
-  },
+  "aliases": [
+        "hg19"
+      ],
+      "refNameAliases": {
+        "adapter": {
+          "type": "RefNameAliasAdapter",
+          "location": {
+            "uri": "https://s3.amazonaws.com/jbrowse.org/genomes/hg19/hg19_aliases.txt"
+          }
+        }
+      }
 }
 
 const tracks = [
-  {
-    "type": "VariantTrack",
-    "trackId": "my_variants",
-    "name": "My Variants",
-    "assemblyNames": ["hg19"],
-    "adapter": {
-      "type": "VcfTabixAdapter",
-      "vcfGzLocation": { "uri": "https://bucketeer-b2ec4285-3f6c-49c8-9753-fe99a1df2ac6.s3.amazonaws.com/public/raw/dna/sample_converted.vcf.gz" },
-      "index": { "location": { "uri": "https://bucketeer-b2ec4285-3f6c-49c8-9753-fe99a1df2ac6.s3.amazonaws.com/public/raw/dna/sample_converted.vcf.gz.tbi" } }
+    {
+      "type": "VariantTrack",
+      "trackId": "my_variants",
+      "name": "My Variants",
+      "assemblyNames": [
+        "GRCh37"
+      ],
+      "adapter": {
+        "type": "VcfTabixAdapter",
+        "vcfGzLocation": {
+          "uri": "https://bucketeer-b2ec4285-3f6c-49c8-9753-fe99a1df2ac6.s3.amazonaws.com/public/raw/dna/sample_converted.vcf.gz"
+        },
+        "index": {
+          "location": {
+            "uri": "https://bucketeer-b2ec4285-3f6c-49c8-9753-fe99a1df2ac6.s3.amazonaws.com/public/raw/dna/sample_converted.vcf.gz.tbi"
+          }
+        }
+      },
+      "textSearching": {
+        "textSearchAdapter": {
+          "type": "TrixTextSearchAdapter",
+          "textSearchAdapterId": "GRCh37-index",
+          "ixFilePath": {
+            "uri": "https://bucketeer-b2ec4285-3f6c-49c8-9753-fe99a1df2ac6.s3.amazonaws.com/public/raw/dna/trix/GRCh37.ix"
+          },
+          "ixxFilePath": {
+            "uri": "https://bucketeer-b2ec4285-3f6c-49c8-9753-fe99a1df2ac6.s3.amazonaws.com/public/raw/dna/trix/GRCh37.ixx"
+          },
+          "metaFilePath": {
+            "uri": "https://bucketeer-b2ec4285-3f6c-49c8-9753-fe99a1df2ac6.s3.amazonaws.com/public/raw/dna/trix/GRCh37_meta.json"
+          },
+          "assemblies": [
+            "GRCh37"
+          ]
+        }
+      }
     }
-  }
+  ]
+
+const aggregateTextSearchAdapters = [
+  {
+      "type": "TrixTextSearchAdapter",
+      "textSearchAdapterId": "GRCh37-index",
+      "ixFilePath": {
+        "uri": "https://bucketeer-b2ec4285-3f6c-49c8-9753-fe99a1df2ac6.s3.amazonaws.com/public/raw/dna/trix/GRCh37.ix"
+      },
+      "ixxFilePath": {
+        "uri": "https://bucketeer-b2ec4285-3f6c-49c8-9753-fe99a1df2ac6.s3.amazonaws.com/public/raw/dna/trix/GRCh37.ixx"
+      },
+      "metaFilePath": {
+        "uri": "https://bucketeer-b2ec4285-3f6c-49c8-9753-fe99a1df2ac6.s3.amazonaws.com/public/raw/dna/trix/GRCh37_meta.json"
+      },
+      "assemblies": [
+        "GRCh37"
+      ]
+    }
 ]
 
 const defaultSession = {
@@ -85,15 +131,21 @@ const defaultSession = {
     ],
   },
 }
+
+const location = "10:29,838,737..29,838,819"
+
 class Genomic extends React.Component {
-  
   render() {
-    const state = createViewState({
+    const textSearchConfig = {
     assembly,
+    aggregateTextSearchAdapters,
     tracks,
-    location: '10:29,838,737..29,838,819',
-    defaultSession
-  });
+    defaultSession,
+    location
+  }
+
+
+    const state = createViewState(textSearchConfig);
     return <Box p={2}>
           <Typography align="left" color="textPrimary"  paragraph >
                 <Link href="/" color="secondary">&lt;&lt;  Back</Link>

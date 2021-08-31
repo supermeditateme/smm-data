@@ -8,6 +8,7 @@
 /.pnp
 .pnp.js
 dna_raw_snp.txt.gz
+public/raw/dna/trix/
 
 # testing
 /coverage
