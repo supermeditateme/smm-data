@@ -115,7 +115,7 @@ export default function Home() {
                       Behavioral
                     </Typography>
                     <Typography>
-                      Behavioral data collected both during the experimental period and after.<br/><br/>
+                      4,071 behavioral datapoints collected before, during, and after the intervention.<br/><br/><br/><br/>
                     </Typography>
                   </CardContent>
                   <CardActions>
@@ -140,7 +140,7 @@ export default function Home() {
                       EEG
                     </Typography>
                     <Typography>
-                      EEG datasets collected via Emotiv EPOC+ headset while idle, meditating, and playing a video game.
+                      87 hours of EEG data collected via Emotiv EPOC+ 16-channel headset.<br/><br/><br/><br/>
                     </Typography>
                   </CardContent>
                   <CardActions>
@@ -151,29 +151,8 @@ export default function Home() {
                   </CardActionArea>
                 </Card>
               </Grid>
+              
               <Grid item key="3" xs={12} sm={6} md={4}>
-                <Card className={classes.card}>
-                  <CardMedia
-                    className={classes.cardMedia}
-                    image={mri}
-                    title="Image title"
-                  />
-                  <CardContent className={classes.cardContent}>
-                    <Typography gutterBottom variant="h5" component="h2">
-                      MRI
-                    </Typography>
-                    <Typography>
-                      Data + analysis coming soon.
-                    </Typography>
-                  </CardContent>
-                  <CardActions>
-                    <Button size="small" color="secondary" disabled download startIcon={<GetAppIcon />}>
-                       Raw Data
-                    </Button>
-                  </CardActions>
-                </Card>
-              </Grid>
-              <Grid item key="4" xs={12} sm={6} md={4}>
                 <Card className={classes.card}>
                 <CardActionArea href="./serum">
                   <CardMedia
@@ -186,7 +165,7 @@ export default function Home() {
                       Metabolomic
                     </Typography>
                     <Typography>
-                      Metabolomic analysis of serum and initial hematology labs.<br/><br/><br/>
+                      20 serum samples analyzed for p-value across 1,744 compounds including primary metabolites, lipidomics, and biogenic amines.<br/><br/><br/>
                     </Typography>
                   </CardContent>
                   <CardActions>
@@ -197,7 +176,7 @@ export default function Home() {
                   </CardActionArea>
                 </Card>
               </Grid>
-              <Grid item key="5" xs={12} sm={6} md={4}>
+              <Grid item key="4" xs={12} sm={6} md={4}>
                 <Card className={classes.card}>
                 <CardActionArea href="./dna">
                   <CardMedia
@@ -211,15 +190,37 @@ export default function Home() {
                       Genomic
                     </Typography>
                     <Typography>
-                      SNP browser + analysis (single sample)<br/><br/><br/>
+                      SNP variant browser<br/><br/><br/>
                     </Typography>
                   </CardContent>
                   <CardActions>
-                    <Button size="small" color="secondary" download startIcon={<GetAppIcon />}>
+                    <Button size="small" color="secondary" href="https://bucketeer-b2ec4285-3f6c-49c8-9753-fe99a1df2ac6.s3.amazonaws.com/public/raw/dna/dna_raw_snp.txt.gz" target="_new" download startIcon={<GetAppIcon />}>
                       Raw Data
                     </Button>
                   </CardActions>
                   </CardActionArea>
+                </Card>
+              </Grid>
+              <Grid item key="5" xs={12} sm={6} md={4}>
+                <Card className={classes.card}>
+                  <CardMedia
+                    className={classes.cardMedia}
+                    image={mri}
+                    title="Image title"
+                  />
+                  <CardContent className={classes.cardContent}>
+                    <Typography gutterBottom variant="h5" component="h2">
+                      MRI
+                    </Typography>
+                    <Typography>
+                      Coming soon.
+                    </Typography>
+                  </CardContent>
+                  <CardActions>
+                    <Button size="small" color="secondary" disabled download startIcon={<GetAppIcon />}>
+                       Raw Data
+                    </Button>
+                  </CardActions>
                 </Card>
               </Grid>
           </Grid>

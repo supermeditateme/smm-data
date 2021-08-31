@@ -984,7 +984,7 @@ const [sortModel, setSortModel] = React.useState([
                 <Link href="/serum" color="secondary">&lt;&lt;  Back</Link>
           </Typography>
           <Typography variant="h4" align="left" paragraph >
-                Enriched Networks
+                Results
           </Typography>
             <img src={enriched_network} alt="Enriched Network" style={{ width: '100%'}}/>
           <br/>

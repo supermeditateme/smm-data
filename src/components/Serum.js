@@ -138,9 +138,14 @@ const rows = [
                       Primary Metabolites
                     </Typography>
                     <Typography>
-                      P-Values for 327 compounds derived from GC-TOF MS<br/><br/><br/><br/><br/><br/>
+                      Results & P-Values for 327 compounds derived from GC-TOF MS<br/><br/><br/><br/><br/>
                     </Typography>
                   </CardContent>
+                  <CardActions>
+                    <Button size="small" color="secondary" href="https://docs.google.com/spreadsheets/d/1NQF4XfhIRJxiwtD9ZL2NwD5zn7llfSWF/edit?usp=sharing&ouid=108903399316967097694&rtpof=true&sd=true" target="_new">
+                      Raw Data
+                    </Button>
+                  </CardActions>
                   </CardActionArea>
                 </Card>
               </Grid>
@@ -157,9 +162,14 @@ const rows = [
                       Biogenic Amines & Complex Lipids<br/>(-ESI)
                     </Typography>
                     <Typography>
-                      P-Values for 556 compounds derived from HILIC-QTOF MS/MS and CSH-QTOF MS/MS (-ESI)
+                      Results & P-Values for 556 compounds derived from CSH-QTOF MS/MS (-ESI)<br/><br/>
                     </Typography>
                   </CardContent>
+                  <CardActions>
+                    <Button size="small" color="secondary" href="https://docs.google.com/spreadsheets/d/1KrBEnmc0ZhsLFGnnOpOnj4ITfWJTE0nK/edit#gid=1095251568" target="_new">
+                      Raw Data
+                    </Button>
+                  </CardActions>
                   </CardActionArea>
                 </Card>
               </Grid>
@@ -176,9 +186,14 @@ const rows = [
                       Biogenic Amines & Complex Lipids<br/>(+ESI)
                     </Typography>
                     <Typography>
-                      P-Values for 861 compounds derived from HILIC-QTOF MS/MS  and CSH-QTOF MS/MS (+ESI)
+                      Results & P-Values for 861 compounds derived from CSH-QTOF MS/MS (+ESI)<br/><br/>
                     </Typography>
                   </CardContent>
+                  <CardActions>
+                    <Button size="small" color="secondary" href="https://docs.google.com/spreadsheets/d/1KrBEnmc0ZhsLFGnnOpOnj4ITfWJTE0nK/edit#gid=33392057" target="_new">
+                      Raw Data
+                    </Button>
+                  </CardActions>
                   </CardActionArea>
                 </Card>
               </Grid>
@@ -198,7 +213,7 @@ const rows = [
               </TableHead>
               <TableBody>
                 {rows.map((row) => (
-                  <TableRow key={row.name} component={Link} href={row.href} hover>
+                  <TableRow key={row.name} hover>
                     <TableCell component="th" scope="row">
                       {row.name}
                     </TableCell>

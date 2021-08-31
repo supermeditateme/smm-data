@@ -192,7 +192,7 @@ const rows = [
                 Overview
           </Typography>
           <Typography align="left" color="textPrimary"  paragraph >
-                Equipment: Emotiv EPOC+ 16-channel EEG
+                Equipment: Emotiv EPOC+ 16-channel EEG.  Click a session to view time series plot.
           </Typography>
           <br/>
           <Typography variant="h4" align="left" paragraph >
@@ -225,7 +225,7 @@ const rows = [
                     <TableCell align="center">{row.date}</TableCell>
                     <TableCell align="center">{row.duration}</TableCell>
                     <TableCell align="right">{row.activity}</TableCell>
-                    <TableCell align="right"><Link href={row.raw} color="secondary">Raw</Link></TableCell>
+                    <TableCell align="right"><Link href={row.raw} color="secondary"><GetAppIcon /></Link></TableCell>
                   </TableRow>
                 ))}
               </TableBody>
