@@ -71,7 +71,7 @@ export default function Home() {
               Super Meditate Me
             </Typography>
             <Typography variant="h5" align="center" color="textSecondary" style={{ color: 'white' }} paragraph >
-             A pilot study tracking a 100-day meditation intervention on a single individual, as documented in the film<br/><Link href="https://supermeditate.me" target="_new" style={{ color: '#fbbe00' }}>Super Meditate Me</Link>
+             A pilot study tracking a 100-day meditation intervention on a single individual, as documented in the film <Link href="https://supermeditate.me" target="_new" style={{ color: '#fbbe00' }}>Super Meditate Me</Link>
             </Typography>
             <div className={classes.heroButtons}>
               <Grid container spacing={2} justifyContent="center">
