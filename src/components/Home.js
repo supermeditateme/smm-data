@@ -5,16 +5,13 @@ import mri from '../mri.png';
 import snp from '../snp.png';
 import React, { Component } from 'react';
 import Button from '@material-ui/core/Button';
-import Box from '@material-ui/core/Box';
 import GetAppIcon from '@material-ui/icons/GetApp';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
-import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
-import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import { createTheme, ThemeProvider } from '@material-ui/core/styles';
@@ -76,7 +73,7 @@ export default function Home() {
             <div className={classes.heroButtons}>
               <Grid container spacing={2} justifyContent="center">
                 <Grid item>
-                  <Button variant="contained" color="primary" href="https://bucketeer-b2ec4285-3f6c-49c8-9753-fe99a1df2ac6.s3.amazonaws.com/public/timeline.html">
+                  <Button variant="contained" color="primary" href="https://bucketeer-b2ec4285-3f6c-49c8-9753-fe99a1df2ac6.s3.amazonaws.com/public/timeline.html" target="_new">
                     View Timeline
                   </Button>
                 </Grid>
@@ -104,7 +101,7 @@ export default function Home() {
           <Grid container spacing={4}>
               <Grid item key="1" xs={12} sm={6} md={4}>
                 <Card className={classes.card}>
-                <CardActionArea href="https://bucketeer-b2ec4285-3f6c-49c8-9753-fe99a1df2ac6.s3.amazonaws.com/public/timeline.html">
+                <CardActionArea href="/behavioral">
                   <CardMedia
                     className={classes.cardMedia}
                     image={behavioral}
